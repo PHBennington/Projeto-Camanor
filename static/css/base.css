@@ -1,0 +1,163 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+
+body {
+    padding-top: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Ajuste para sua fonte preferida */
+}
+
+
+
+.navbar {
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilo dos links principais */
+.nav-link {
+    font-weight: 500;
+    color: #0059ff !important;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Remove brilho ao tocar no mobile */
+}
+
+/* Efeito de linha embaixo ao passar o mouse (Desktop) */
+@media (min-width: 992px) {
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #007bff;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   2. CONTROLE DA SETA (CHEVRON)
+   ========================================================================== */
+
+/* Mata a seta padrão azul do Bootstrap */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Estilo da nossa seta customizada */
+.custom-arrow {
+    font-size: 0.8rem;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Garante a animação de volta */
+    transform: rotate(0deg); 
+}
+
+/* Gira a seta: funciona no Hover (PC) e no Clique (Mobile) */
+.nav-item.dropdown.show .custom-arrow,
+.nav-item.dropdown:hover .custom-arrow {
+    transform: rotate(180deg) !important;
+}
+
+/* ==========================================================================
+   3. DROPDOWN - COMPORTAMENTO DESKTOP
+   ========================================================================== */
+
+@media (min-width: 992px) {
+    .dropdown-menu {
+        display: block; /* Mantemos block para permitir animação de opacidade */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Abre o menu no hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* Ponte invisível para o mouse não perder o foco ao descer */
+    .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: transparent;
+    }
+}
+
+/* Estilo dos itens dentro do menu */
+.dropdown-item {
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+/* ==========================================================================
+   4. DROPDOWN - COMPORTAMENTO MOBILE
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 60px; /* Logo um pouco menor no celular */
+    }
+
+    /* Remove contornos azuis de foco no clique */
+    .nav-link:focus, 
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Alinhamento da palavra Empresa com a seta */
+    .dropdown-toggle-custom {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 5px; /* Espaço entre texto e seta */
+        width: auto;
+    }
+
+    /* Menu sanfona (abre suave) */
+    .dropdown-menu {
+        display: block; 
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease-in-out;
+        position: static;
+        width: 100%;
+        border: none;
+        padding: 0 20px;
+        background-color: #fcfcfc;
+        transform: none; /* Remove o pulo do desktop */
+    }
+
+    /* Quando clicado no mobile */
+    .dropdown-menu.show {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: 10px 20px;
+    }
+}
