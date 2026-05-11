@@ -1,8 +1,96 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Início | Projeto Camanor{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/paginaInicial.css' %}" />
+{% endblock %}
 
 {% block content %}
-   
+<div id="bannerCamanor" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicadores (as barrinhas/pontinhos lá embaixo) -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#bannerCamanor" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#bannerCamanor" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#bannerCamanor" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#bannerCamanor" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="{% static 'img/camanorFoto2.png' %}" class="d-block w-100" alt="Processamento de Camarão">
+
+            <!-- Aqui é onde a mágica acontece (A Bolha/Legenda) -->
+            <div class="carousel-caption d-none d-md-block text-start custom-caption">
+                <h5
+                    style="color: rgb(255, 255, 255); font-size: 250%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; ">
+                    Tecnologia e Sustentabilidade</h5>
+                <p
+                    style="margin-left: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Líderes em inovação no cultivo de camarões com alta tecnologia.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="{% static 'img/camanorFoto1.png' %}" class="d-block w-100" alt="Fábrica Camanor">
+            <div class="carousel-caption d-none d-md-block text-start custom-caption">
+                <h5
+                    style="color: rgb(255, 255, 255); font-size: 250%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; ">
+                    Qualidade Internacional</h5>
+                <p
+                    style="margin-left: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Garantimos o melhor produto da nossa fazenda para a sua mesa.</p>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="{% static 'img/camanorFoto3.png' %}" class="d-block w-100" alt="Cultivo de Camarões">
+            <div class="carousel-caption d-none d-md-block text-start custom-caption">
+                <h5
+                    style="color: rgb(255, 255, 255); font-size: 250%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; ">
+                    Inovação em Cultivo </h5>
+                <p
+                    style="margin-left: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Estamos sempre buscando melhorar nossos processos para oferecer o melhor produto.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/camanorFoto4.png' %}" class="d-block w-100" alt="Cultivo de Camarões">
+            <div class="carousel-caption d-none d-md-block text-start custom-caption">
+                <h5
+                    style="color: rgb(255, 255, 255); font-size: 250%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; ">
+                    Inovação em Cultivo</h5>
+                <p
+                    style="margin-left: 10px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    Estamos sempre buscando melhorar nossos processos para oferecer o melhor produto.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles (Setas) -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#bannerCamanor" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#bannerCamanor" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
+</div>
+
+{% block extra_js %}
+<script>
+    window.sr = ScrollReveal({ reset: true });
+
+    // Anima o container do carrossel quando ele entra na tela
+    sr.reveal('#bannerCamanor', {
+        duration: 1500,
+        origin: 'bottom',
+        distance: '30px'
+    });
+
+</script>
+{% endblock %}
 {% endblock %}
