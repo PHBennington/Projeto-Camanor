@@ -1,28 +1,55 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS
+   BASE.CSS — Camanor
+   Contém: reset geral, navbar, dropdown desktop/mobile, footer
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. GERAL
    ========================================================================== */
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Ajuste para sua fonte preferida */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*
+   .fullwidth-wrapper
+   Envolve blocos que precisam de 100% da largura (carrossel, banners).
+   O padding-top compensa a navbar fixed-top (logo 80px + padding da nav ~18px).
+*/
+.fullwidth-wrapper {
+    padding-top: 98px;
+}
+
+/*
+   .content-wrapper
+   Margem superior para páginas sem bloco fullwidth.
+   Páginas com carrossel não precisam deste espaço pois o fullwidth-wrapper já cuida.
+*/
+.content-wrapper {
+    margin-top: 1.5rem;
+}
+
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
 
 .navbar {
     padding: 0.8rem 0;
     transition: all 0.3s ease;
 }
 
-/* Estilo dos links principais */
 .nav-link {
     font-weight: 500;
     color: #0059ff !important;
     margin: 0 10px;
     position: relative;
     transition: color 0.3s ease;
-    -webkit-tap-highlight-color: transparent; /* Remove brilho ao tocar no mobile */
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Efeito de linha embaixo ao passar o mouse (Desktop) */
+/* Linha decorativa embaixo do link — somente desktop */
 @media (min-width: 992px) {
     .nav-link::after {
         content: '';
@@ -40,36 +67,37 @@ body {
     }
 }
 
+
 /* ==========================================================================
-   2. CONTROLE DA SETA (CHEVRON)
+   3. SETA (CHEVRON) DO DROPDOWN
    ========================================================================== */
 
-/* Mata a seta padrão azul do Bootstrap */
+/* Remove seta padrão do Bootstrap */
 .dropdown-toggle::after {
     display: none !important;
 }
 
-/* Estilo da nossa seta customizada */
 .custom-arrow {
     font-size: 0.8rem;
     display: inline-block;
-    transition: transform 0.3s ease-in-out; /* Garante a animação de volta */
-    transform: rotate(0deg); 
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
 }
 
-/* Gira a seta: funciona no Hover (PC) e no Clique (Mobile) */
+/* Gira a seta no hover (desktop) e no clique (mobile) */
 .nav-item.dropdown.show .custom-arrow,
 .nav-item.dropdown:hover .custom-arrow {
     transform: rotate(180deg) !important;
 }
 
+
 /* ==========================================================================
-   3. DROPDOWN - COMPORTAMENTO DESKTOP
+   4. DROPDOWN — DESKTOP
    ========================================================================== */
 
 @media (min-width: 992px) {
     .dropdown-menu {
-        display: block; /* Mantemos block para permitir animação de opacidade */
+        display: block;
         opacity: 0;
         visibility: hidden;
         transform: translateY(15px);
@@ -77,10 +105,9 @@ body {
         pointer-events: none;
         border-radius: 10px;
         border: none;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    /* Abre o menu no hover */
     .nav-item.dropdown:hover .dropdown-menu {
         opacity: 1;
         visibility: visible;
@@ -100,7 +127,6 @@ body {
     }
 }
 
-/* Estilo dos itens dentro do menu */
 .dropdown-item {
     border-radius: 5px;
     transition: background 0.2s, color 0.2s;
@@ -111,33 +137,32 @@ body {
     color: #007bff;
 }
 
+
 /* ==========================================================================
-   4. DROPDOWN - COMPORTAMENTO MOBILE
+   5. DROPDOWN — MOBILE
    ========================================================================== */
 
 @media (max-width: 991px) {
     .navbar-brand img {
-        height: 60px; /* Logo um pouco menor no celular */
+        height: 60px;
     }
 
-    /* Remove contornos azuis de foco no clique */
-    .nav-link:focus, 
+    .nav-link:focus,
     .navbar-toggler:focus {
         outline: none !important;
         box-shadow: none !important;
     }
 
-    /* Alinhamento da palavra Empresa com a seta */
     .dropdown-toggle-custom {
         display: inline-flex !important;
         align-items: center;
-        gap: 5px; /* Espaço entre texto e seta */
+        gap: 5px;
         width: auto;
     }
 
-    /* Menu sanfona (abre suave) */
+    /* Menu sanfona */
     .dropdown-menu {
-        display: block; 
+        display: block;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -148,10 +173,9 @@ body {
         border: none;
         padding: 0 20px;
         background-color: #fcfcfc;
-        transform: none; /* Remove o pulo do desktop */
+        transform: none;
     }
 
-    /* Quando clicado no mobile */
     .dropdown-menu.show {
         max-height: 500px;
         opacity: 1;
@@ -161,7 +185,10 @@ body {
 }
 
 
-/* ===== FOOTER ===== */
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+
 .camanor-footer {
     position: relative;
     margin-top: 80px;
@@ -184,7 +211,6 @@ body {
 }
 
 .footer-logo {
-
     opacity: 0.9;
 }
 
@@ -207,7 +233,7 @@ body {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #cfe8f7;
     font-size: 1rem;
     text-decoration: none;
@@ -215,8 +241,8 @@ body {
 }
 
 .footer-socials a:hover {
-    background: rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
 }
 
@@ -275,7 +301,7 @@ body {
 }
 
 .footer-divider {
-    border-color: rgba(255,255,255,0.1);
+    border-color: rgba(255, 255, 255, 0.1);
     margin: 8px 0 16px;
 }
 

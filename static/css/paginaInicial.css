@@ -1,0 +1,90 @@
+/* ==========================================================================
+   PAGINA_INICIAL.CSS — Camanor
+   Carrossel fullscreen + caption
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. CARROSSEL — FULLSCREEN
+   ========================================================================== */
+
+/*
+   A navbar tem fixed-top. O .fullwidth-wrapper do base.css já aplica
+   padding-top: 98px, então o carrossel começa logo abaixo da navbar.
+   calc(100vh - 98px) garante que ele preencha o restante da tela.
+*/
+#bannerCamanor {
+    height: calc(100vh - 98px);
+    overflow: hidden;
+    height: 60vh;
+    position: relative;
+}
+
+/* O wrapper interno e cada slide herdam a altura total */
+#bannerCamanor .carousel-inner,
+#bannerCamanor .carousel-item {
+    height: 100%;
+}
+
+/* A imagem preenche o slide inteiro sem distorcer */
+#bannerCamanor .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* troque por "fill" se quiser esticar sem cortar */
+    object-position: center;
+    display: block;
+}
+
+
+/* ==========================================================================
+   2. CAPTION (LEGENDA DO SLIDE)
+   ========================================================================== */
+
+#bannerCamanor .custom-caption {
+    bottom: 20%;
+    left: 5%;
+    max-width: 45%;
+}
+
+#bannerCamanor .custom-caption h5 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    margin-bottom: 0.5rem;
+}
+
+#bannerCamanor .custom-caption p {
+    margin-left: 10px;
+    color: #f0f0f0;
+    font-family: 'Lucida Sans', 'Lucida Grande', Geneva, Verdana, sans-serif;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==========================================================================
+   3. RESPONSIVO
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    #bannerCamanor .custom-caption {
+        max-width: 10%;
+        bottom: 12%;
+        height: 40%;
+    }
+
+    #bannerCamanor .custom-caption h5 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Em telas muito pequenas usa a viewport inteira */
+    #bannerCamanor {
+        height: 40svh;
+    }
+
+    #bannerCamanor .custom-caption h5 {
+        font-size: 1.1rem;
+    }
+}
