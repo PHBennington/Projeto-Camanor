@@ -76,7 +76,7 @@
             reset: false,
             duration: 1000,
             distance: '30px',
-            mobile: false
+            mobile: true
         });
         sr.reveal('.navbar-brand', { origin: 'left', delay: 200 });
         if (isDesktop) {
@@ -145,6 +145,24 @@
         sr.reveal('.camanor-footer', { duration: 1750, origin: 'bottom', distance: '50px', viewFactor: 0.2 });
         sr.reveal('.footer-body .col-lg-4, .footer-body .col-lg-2', { duration: 1000, origin: 'bottom', distance: '30px', interval: 200, delay: 300 });
     </script>
+
+
+    <!-- SCROLL REVEAL - do compromisso -->
+    <script>
+    sr.reveal('.compromisso-titulo', {
+        duration: 1000,
+        origin: 'bottom',
+        distance: '20px',
+        mobile: true
+    });
+
+    sr.reveal('.compromisso-grid img', {
+        duration: 1000,
+        origin: 'bottom',
+        distance: '20px',
+        interval: 200
+    });
+</script>
 
     {% block extra_js %}{% endblock %}
 

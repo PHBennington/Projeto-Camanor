@@ -70,7 +70,7 @@
     #bannerCamanor .custom-caption {
         max-width: 10%;
         bottom: 12%;
-        height: 40%;
+        height: 26%;
     }
 
     #bannerCamanor .custom-caption h5 {
@@ -86,5 +86,87 @@
 
     #bannerCamanor .custom-caption h5 {
         font-size: 1.1rem;
+    }
+}
+
+
+
+/* ==========================================================================
+   SEÇÃO COMPROMISSO — adicione no paginaInicial.css
+   ========================================================================== */
+ 
+.compromisso {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+  
+}
+ 
+.compromisso-titulo {
+    color: #0a3d62;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+/* Grid dos 4 ícones — linha única no desktop */
+.compromisso-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* alinha pelo topo para ficarem nivelados */
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto; /* centraliza o grid na página */
+}
+ 
+.compromisso-grid img {
+    max-width: 100%;
+    width: 100px;
+    object-fit: contain;
+}
+.compromisso-grid img.aquascience4 {
+    width: 225px;
+  
+}
+ 
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+ 
+/* Tablet: 2 por linha */
+@media (max-width: 768px) {
+    .compromisso-grid img {
+        width: 140px;
+        
+    }
+}
+ 
+@media (max-width: 480px) {
+    .compromisso-grid {
+        gap: 85px;
+
+    }
+
+    .compromisso-grid img {
+        width: 80px; /* Diminui as normais */
+       
+    }
+
+    .compromisso-grid img.aquascience4 {
+        width: 160px; /* Mantém esta proporcionalmente maior que as outras */
+    }
+}
+
+@media (max-width: 820px) {
+    .compromisso-grid img {
+        width: 70px; /* Diminui ainda mais as normais */
+        
+    }
+
+    .compromisso-grid img.aquascience4 {
+        width: 120px; /* Mantém esta proporcionalmente maior que as outras */
     }
 }
