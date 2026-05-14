@@ -191,7 +191,7 @@ body {
 
 .camanor-footer {
     position: relative;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .footer-wave {
@@ -320,4 +320,10 @@ body {
     color: #e57373;
     font-size: 0.75rem;
     margin: 0 2px;
+}
+
+@media (max-width: 500px) {
+    .footer-body {
+        margin-top: 5px;
+    }
 }

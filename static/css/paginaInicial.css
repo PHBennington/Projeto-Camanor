@@ -170,3 +170,211 @@
         width: 120px; /* Mantém esta proporcionalmente maior que as outras */
     }
 }
+
+
+
+
+/* ==========================================================================
+   SEÇÃO PRODUTOS
+   ========================================================================== */
+ 
+.produtos {
+    background-color: #eaf0f6;
+    padding: 50px 20px 40px;
+    text-align: center;
+    width: 100% !important; 
+}
+ 
+.produtos-titulo {
+    color: #0a3d62;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+/* Linha decorativa abaixo do título */
+.produtos-titulo::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #0a3d62;
+    margin: 8px auto 36px;
+}
+ 
+/* ── Trilho ──────────────────────────────────────────────── */
+ 
+.produtos-trilho {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+ 
+    /* Mobile: desliza horizontalmente */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+ 
+    /* Esconde a barra de rolagem mas mantém funcionalidade */
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE/Edge */
+}
+ 
+.produtos-trilho::-webkit-scrollbar {
+    display: none;                /* Chrome/Safari */
+}
+ 
+/* ── Card ────────────────────────────────────────────────── */
+ 
+.produto-card {
+    border-radius: 16px !important;   /* bordas bem arredondadas */
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    /* Tamanho fixo para o trilho funcionar igual em todos os tamanhos */
+    min-width: 280px;
+    max-width: 320px;
+    flex: 1;
+ 
+    scroll-snap-align: center;    /* cada card encaixa no centro ao deslizar */
+}
+ 
+/* Efeito hover: cresce um pouco */
+.produto-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+ 
+.produto-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+ 
+.produto-card .card-title {
+    color: #0a3d62;
+    font-weight: 600;
+    font-size: 1rem;
+}
+ 
+.produto-card .card-text {
+    font-size: 0.88rem;
+    color: #4a5568;
+}
+ 
+.produto-card .btn-primary {
+    background-color: #0a3d62;
+    border-color: #0a3d62;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+ 
+.produto-card .btn-primary:hover {
+    background-color: #0d4f7c;
+    border-color: #0d4f7c;
+}
+ 
+
+ 
+/* ── Responsivo ──────────────────────────────────────────── */
+ 
+/* No desktop os cards ficam lado a lado sem scroll */
+@media (min-width: 900px) {
+    .produtos-trilho {
+        overflow-x: visible;
+        flex-wrap: nowrap;
+    }
+}
+ 
+/* No mobile o trilho desliza e os cards ficam com largura de 80% da tela */
+@media (max-width: 899px) {
+    .produtos-trilho {
+        justify-content: flex-start;
+        padding: 0 20px 16px;    /* padding lateral para ver o próximo card */
+    }
+ 
+    .produto-card {
+        min-width: 75vw;          /* mostra um pouco do próximo card */
+        max-width: 75vw;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .produto-card {
+        min-width: 82vw;
+        max-width: 82vw;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   SEÇÃO INOVAÇÃO — faixa de selos/parceiros
+   ========================================================================== */
+ 
+.inovacao {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+ 
+.inovacao-titulo {
+    color: #0a3d62;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ 
+.inovacao-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+ 
+.inovacao-grid img {
+    height: 85px;       /* altura fixa igual para todos os selos */
+    width: auto;        /* largura proporcional a cada logo */
+    object-fit: contain;
+    filter: grayscale(20%);
+    opacity: 0.85;
+    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+}
+ 
+.inovacao-grid img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.06);
+}
+ 
+/* Tablet */
+@media (max-width: 768px) {
+    .inovacao-grid img {
+        height: 48px;
+    }
+ 
+    .inovacao-grid {
+        gap: 28px;
+    }
+}
+ 
+/* Mobile */
+@media (max-width: 480px) {
+    .inovacao-grid img {
+        height: 38px;
+    }
+ 
+    .inovacao-grid {
+        gap: 20px;
+    }
+}

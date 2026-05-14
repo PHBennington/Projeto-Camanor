@@ -9,6 +9,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {% block extra_css %}{% endblock %}
     <title>{% block title %}Projeto Camanor{% endblock %}</title>
@@ -162,6 +163,17 @@
         distance: '20px',
         interval: 200
     });
+</script>
+<script>
+    sr.reveal('.produtos-titulo', {
+        duration: 1000,
+        origin: 'bottom',
+        distance: '20px',
+        mobile: true
+        
+    });
+
+
 </script>
 
     {% block extra_js %}{% endblock %}

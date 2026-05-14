@@ -75,7 +75,59 @@
         <img src="{% static 'img/aquascience_img3.png' %}" alt="Compromisso com Pessoas">
     </div>
 </section>
+
+<section class="produtos">
+    <h4 class="produtos-titulo">Conheça Nossos Produtos</h4>
+ 
+    <!-- Trilho deslizável — no desktop fica estático, no mobile desliza -->
+    <div class="produtos-trilho">
+ 
+        <div class="card produto-card">
+            <img src="{% static 'img/produto1.png' %}" class="card-img-top" alt="Camarão Inteiro">
+            <div class="card-body">
+                <h5 class="card-title">Camarão Inteiro</h5>
+                <p class="card-text">Camarão da espécie <em>Litopenaeus vannamei</em>, inteiro, oferecido em várias granuluras.</p>
+                <a href="#" class="btn btn-primary btn-sm">Mais informações</a>
+            </div>
+        </div>
+ 
+        <div class="card produto-card">
+            <img src="{% static 'img/produto2.png' %}" class="card-img-top" alt="Camarão Sem Cabeça">
+            <div class="card-body">
+                <h5 class="card-title">Camarão Sem Cabeça</h5>
+                <p class="card-text">Camarão sem cabeça, fácil de descascar, oferecido em várias granuluras.</p>
+                <a href="#" class="btn btn-primary btn-sm">Mais informações</a>
+            </div>
+        </div>
+ 
+        <div class="card produto-card">
+            <img src="{% static 'img/produto3.png' %}" class="card-img-top" alt="Camarão Tail Off">
+            <div class="card-body">
+                <h5 class="card-title">Camarão Tail Off</h5>
+                <p class="card-text">Camarão sem cabeça, descascado e eviscerado, sem bastão, de textura macia e sabor diferenciado.</p>
+                <a href="#" class="btn btn-primary btn-sm">Mais informações</a>
+            </div>
+        </div>
+ 
+    </div>
+</section>
+
+
+<section class="inovacao">
+    <h4 class="inovacao-titulo">Tecnologia e Inovação</h4>
+    <div class="inovacao-grid">
+        <img src="{% static 'img/aquascienceRodape.png' %}" alt="AquaScience">
+        <img src="{% static 'img/rodapeInnovation.png' %}" alt="Innovation Award">
+        <img src="{% static 'img/rodapeCamanor2.png' %}" alt="Camanor">
+        <img src="{% static 'img/rodapeRetomando2024.png' %}" alt="Retomando 2024">
+        <img src="{% static 'img/rodapeSeloverde.png' %}" alt="Selo Verde">
+    </div>
+</section>
+
 {% endblock %}
+
+
+
 
 {% block extra_js %}
 <script>
