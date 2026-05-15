@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o=nq$8f6%@t=j$0ymk2b2o4ezfa7b35=(asd6zvo+&s6a7ee1u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['projeto-camanor.onrender.com', 'localhost', '127.0.0.1']
 

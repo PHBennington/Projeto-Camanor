@@ -19,7 +19,7 @@
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{% static 'img/camanorFoto2.png' %}" alt="Processamento de Camarão">
+            <img src="{% static 'img/camanorFoto1.png' %}" alt="Processamento de Camarão">
             <div class="carousel-caption d-none d-md-block text-start custom-caption">
                 <h5>Tecnologia e Sustentabilidade</h5>
                 <p>Líderes em inovação no cultivo de camarões com alta tecnologia.</p>
@@ -27,7 +27,7 @@
         </div>
 
         <div class="carousel-item">
-            <img src="{% static 'img/camanorFoto1.png' %}" alt="Fábrica Camanor">
+            <img src="{% static 'img/camanorFoto2.png' %}" alt="Fábrica Camanor">
             <div class="carousel-caption d-none d-md-block text-start custom-caption">
                 <h5>Qualidade Internacional</h5>
                 <p>Garantimos o melhor produto da nossa fazenda para a sua mesa.</p>
@@ -132,9 +132,11 @@
 {% block extra_js %}
 <script>
     sr.reveal('#bannerCamanor', {
-        duration: 1500,
+        duration: 1000,
         origin: 'bottom',
         distance: '30px'
     });
+
+    
 </script>
 {% endblock %}

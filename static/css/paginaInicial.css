@@ -30,7 +30,7 @@
 #bannerCamanor .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* troque por "fill" se quiser esticar sem cortar */
+    object-fit: fill;       /* troque por "fill" se quiser esticar sem cortar */
     object-position: center;
     display: block;
 }
@@ -50,15 +50,24 @@
     color: #ffffff;
     font-size: 2.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
-    margin-bottom: 0.5rem;
+    /* Efeito de profundidade em camadas */
+    text-shadow: 
+        2px 2px 0px #474747,   /* Camada cinza intermediária */
+        4px 4px 0px #444444,   /* Camada cinza escura */
+        6px 6px 8px rgba(0, 0, 0, 0.3); /* Sombra suave no fundo */
+    margin-bottom: 0.9rem;
+    margin-left: 60px;
+    text-transform: uppercase; /* Para combinar com a imagem */
 }
 
 #bannerCamanor .custom-caption p {
-    margin-left: 10px;
     color: #f0f0f0;
     font-family: 'Lucida Sans', 'Lucida Grande', Geneva, Verdana, sans-serif;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    /* Efeito similar, mas mais sutil para o parágrafo */
+    text-shadow: 
+        1px 1px 0px #3a3a3a, 
+        2px 2px 0px #1a1a1a;
+    margin-left: 60px;
 }
 
 
@@ -92,7 +101,7 @@
 
 
 /* ==========================================================================
-   SEÇÃO COMPROMISSO — adicione no paginaInicial.css
+   SEÇÃO COMPROMISSO
    ========================================================================== */
  
 .compromisso {
@@ -326,7 +335,7 @@
  
 .inovacao-titulo {
     color: #0a3d62;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 32px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
